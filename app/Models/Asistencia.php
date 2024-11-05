@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Asistencia extends Model
 {
     use HasFactory;
+    
+    protected $fillable=['Fecha_asistencia','Hora_entrada','Hora_salida','id_empleado'];
 }
