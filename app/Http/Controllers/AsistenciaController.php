@@ -35,6 +35,16 @@ class AsistenciaController extends Controller
             'result' => $asistencia
         ]);
     }
+    public function getDataByid (Request $REQUEST){
+
+        $asistencia=Asistencia ::where('id',$REQUEST->id)-> get();
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'data..',
+            'result' => $asistencia
+        ]);
+    }
     public function update (Request $REQUEST){
 
         $asistencia=Asistencia ::findOrfail($REQUEST->id);

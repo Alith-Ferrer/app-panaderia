@@ -31,6 +31,16 @@ class TipoPrestacionesSocialeController extends Controller
             'result' => $tipo_prestaciones_sociales
         ]);
     }
+    public function getDataByid (Request $REQUEST){
+
+        $tipo_prestaciones_sociales=Tipo_prestaciones_sociale  ::where('id',$REQUEST->id)-> get();
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'data..',
+            'result' => $tipo_prestaciones_sociales
+        ]);
+    }
     public function update (Request $REQUEST){
 
         $tipo_prestaciones_sociales=Tipo_prestaciones_sociale ::findOrfail($REQUEST->id);

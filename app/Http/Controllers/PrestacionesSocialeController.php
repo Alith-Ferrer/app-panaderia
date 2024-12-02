@@ -34,6 +34,16 @@ class PrestacionesSocialeController extends Controller
             'result' => $prestaciones_sociales
         ]);
     }
+    public function getDataByid (Request $REQUEST){
+
+        $prestaciones_sociales=Prestaciones_sociale ::where('id',$REQUEST->id)-> get();
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'data..',
+            'result' => $prestaciones_sociales
+        ]);
+    }
     public function update (Request $REQUEST){
 
         $prestaciones_sociales=Prestaciones_sociale ::findOrfail($REQUEST->id);

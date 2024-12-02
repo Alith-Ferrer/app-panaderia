@@ -33,6 +33,16 @@ class EmpleadoController extends Controller
             'result' => $empleado
         ]);
     }
+    public function getDataByid (Request $REQUEST){
+
+        $empleado=Empleado ::where('id',$REQUEST->id)-> get();
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'data..',
+            'result' => $empleado
+        ]);
+    }
     public function update (Request $REQUEST){
 
         $empleado=Empleado ::findOrfail($REQUEST->id);

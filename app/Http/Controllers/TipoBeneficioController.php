@@ -31,6 +31,16 @@ class TipoBeneficioController extends Controller
             'result' => $tipo_beneficios
         ]);
     }
+    public function getDataByid (Request $REQUEST){
+
+        $tipo_beneficios=Tipo_beneficio ::where('id',$REQUEST->id)-> get();
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'data..',
+            'result' => $tipo_beneficios
+        ]);
+    }
     public function update (Request $REQUEST){
 
         $tipo_beneficios=Tipo_beneficio ::findOrfail($REQUEST->id);

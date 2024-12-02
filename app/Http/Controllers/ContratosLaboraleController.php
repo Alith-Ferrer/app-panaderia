@@ -34,6 +34,16 @@ class contratoslaboraleController extends Controller
             'result' => $tipo_contratos
         ]);
     }
+    public function getDataByid (Request $REQUEST){
+
+        $tipo_contratos=contratos_laborale ::where('id',$REQUEST->id)-> get();
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'data..',
+            'result' => $tipo_contratos
+        ]);
+    }
     public function update (Request $REQUEST){
 
         $tipo_contratos=contratos_laborale ::findOrfail($REQUEST->id);

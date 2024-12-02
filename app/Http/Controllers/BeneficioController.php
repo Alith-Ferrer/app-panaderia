@@ -33,6 +33,16 @@ class BeneficioController extends Controller
             'result' => $beneficios
         ]);
     }
+    public function getDataByid (Request $REQUEST){
+
+        $beneficios=Beneficio ::where('id',$REQUEST->id)-> get();
+
+        return response()->json([
+            'status' => '200',
+            'message' => 'data..',
+            'result' => $beneficios
+        ]);
+    }
     public function update (Request $REQUEST){
 
         $beneficios=Beneficio ::findOrfail($REQUEST->id);
